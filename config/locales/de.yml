@@ -1,0 +1,5 @@
+de :
+   simple_calendar :
+     précédent : " << "
+     suivant : " >> "
+     semaine : Woche

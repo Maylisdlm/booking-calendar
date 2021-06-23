@@ -1,0 +1,8 @@
+<h2><%= @guide.name %></h2>
+<p><%= @guide.email %></p>
+<p><%= @guide.city_id %></p>
+
+<%= link_to "Delete #{@guide.name}",
+            guide_path(@guide),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
