@@ -17,7 +17,7 @@ before_action :set_guide, only: [:show, :edit, :update, :destroy]
   end
 
   def create
-    @guide = Guide.new(parmas[:guide])
+    @guide = Guide.new(params[:guide])
     @guide.save
     redirect_to guide_path(@guide)
   end
