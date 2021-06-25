@@ -1,5 +1,5 @@
 class GuidesController < ApplicationController
-before_action :set_guide, only: [:show, :edit, :update, :destroy]
+  before_action :set_guide, only: [:show, :edit, :update, :destroy]
 
   def index
     @guides = Guide.all

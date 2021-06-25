@@ -1,10 +1,11 @@
 class CitiesController < ApplicationController
+  before_action :set_city, only: [:show, :edit, :update, :destroy]
+
   def index
     @cities = City.all
   end
 
   def show
-    @city = City.find(params[:id])
   end
 
   def new
@@ -13,23 +14,20 @@ class CitiesController < ApplicationController
   end
 
   def edit
-    @city = City.find(params[:id])
   end
 
-  def create_table
+  def create
     @city = City.new(params[:city])
     @city.save
     redirect_to city_path(city)
   end
 
   def update
-    @city = City.find(params[:id])
     @city.update(city_params)
     redirect_to city_path(city)
   end
 
   def destroy
-    @city = City.find(params[:id])
     @city.destroy
     redirect_to city_path
   end
@@ -38,5 +36,9 @@ class CitiesController < ApplicationController
 
   def city_params
     params.require(:city).permit(:name, :calendar_id)
+  end
+
+  def set_city
+    @city = City.find(params[:id])
   end
 end
