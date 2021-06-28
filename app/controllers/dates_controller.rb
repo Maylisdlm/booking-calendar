@@ -23,7 +23,7 @@ class DatesController < ApplicationController
   end
 
   def update
-    @city.update(date_params)
+    @date.update(date_params)
     redirect_to date_path(date)
   end
 
