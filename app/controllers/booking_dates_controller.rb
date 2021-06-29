@@ -1,5 +1,5 @@
 class BookingDatesController < ApplicationController
-    before_action :set_date, only: [:show, :edit, :update, :destroy]
+  before_action :set_date, only: [:show, :edit, :update, :destroy]
 
   def index
     @booking_dates = BookingDate.all
